@@ -1,0 +1,48 @@
+api:
+  base_url: "https://api.openweathermap.org/data/2.5/weather" # Don't change this url, it is the right one to fetch current daily weather data
+  units: "metric" # Insert here your preference. This field is optional, if deleted the API uses "default": metric | imperial | default
+  timeout_seconds: 10 # Can be changed - timeout in seconds
+  max_retries: 3 # Can be changed - max number of retries
+  backoff_seconds: 10 # Can be changed - backoff in seconds
+
+storage:
+  format: "parquet" # Insert here your preference. Currently 3 output files are available: csv | json | parquet
+  layout: "hive_compact" # Insert here your preference. Currently 5 options for the folder structure are available: date | date_country | country_date | hive_compact | city_date
+  base_path: "data" # Folder where the collected weather data will be stored, inside the main weather_pipeline folder
+
+cities: # Add or remove any city/country here, in the format - {name: "[city_name]", country: "[country code with 2 digits]"}
+  - {name: "Lisbon", country: "PT"}
+  - {name: "Porto", country: "PT"}
+  - {name: "Faro", country: "PT"}
+  - {name: "Funchal", country: "PT"}
+  - {name: "Ponta Delgada", country: "PT"}
+
+  - {name: "Seville", country: "ES"}
+  - {name: "Salamanca", country: "ES"}
+
+  - {name: "Valletta", country: "MT"}
+
+  - {name: "Berlin", country: "DE"}
+  - {name: "Köln", country: "DE"}
+  - {name: "Düsseldorf", country: "DE"}
+
+  - {name: "Paris", country: "FR"}
+  - {name: "Strasbourg", country: "FR"}
+
+  - {name: "London", country: "GB"}
+  - {name: "Dublin", country: "IE"}
+  - {name: "Cork", country: "IE"}
+
+  - {name: "Zagreb", country: "HR"}
+
+  - {name: "Venice", country: "IT"}
+  - {name: "Milano", country: "IT"}
+
+  - {name: "Tirana", country: "AL"}
+
+  - {name: "Vienna", country: "AT"}
+
+  - {name: "Brussels", country: "BE"}
+  - {name: "Brugge", country: "BE"}
+
+  - {name: "Bratislava", country: "SK"}
